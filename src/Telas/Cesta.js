@@ -3,6 +3,7 @@ import { Text, Image, Dimensions, StyleSheet, View } from "react-native";
 
 import topo from '../../assets/topo.png';
 import logo from '../../assets/logo.png';
+import TEXTO from "../componentes/texto";
 
 const widht = Dimensions.get('screen').width;
 
@@ -11,11 +12,11 @@ export default function Cesta() {
         <Image source={topo} style={estilos.topo} />
 
         <Text style={estilos.titulo}> Detalhe da cesta</Text>
-        <Text style={estilos.titulo.nome}>Cesta de verduras</Text>
+        <TEXTO style={estilos.titulo.nome}>Cesta de verduras</TEXTO>
 
         <View style={estilos.fazenda}>
             <Image source={logo} style={estilos.imagenFazenda} />
-            <Text style={estilos.nomeFazenda}> Jenny Jack Farm</Text>
+            <TEXTO style={estilos.nomeFazenda}> Jenny Jack Farm</TEXTO>
         </View>
         <Text style={estilos.titulo.nome}>Jenny Jack Farm</Text>
         <Text> Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha.</Text>
@@ -26,7 +27,7 @@ export default function Cesta() {
 const estilos = StyleSheet.create({
     topo: {
         width: "100%",
-        height: 578 / 768 * widht
+       // height: 578 / 768 * widht
     },
     titulo: {
         width: "100%",
@@ -47,6 +48,7 @@ const estilos = StyleSheet.create({
         color: "#464646",
         fontSize: 26,
         lineHeight: 42,
+        fontWeight:"bold",
         fontFamily: "MontSerratBold"
     },
     fazenda: {
@@ -59,7 +61,8 @@ const estilos = StyleSheet.create({
     },
     nomeFazenda: {
         fontSize: 16,
-        fontFamily: Montserrat_Regular,
+        fontWeight:"regular",
+        fontFamily: "MontserratRegular",
     },
     descricao: {
         color: "#A3A3A3",

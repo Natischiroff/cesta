@@ -1,42 +1,28 @@
+import React from 'react';
+import {  View } from 'react-native';
+import { SafeAreaView } from 'react-native-web';
+import Cesta from './src/Telas/Cesta';
 
-import { SafeAreaView} from 'react-native';
-import Cesta from './src/Telas/Cesta'
-import { Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
-import { SafeAreaView, View } from 'react-native-web';
-import {
-  UseFontes,
+ import {
+  useFonts,
   Montserrat_400Regular,
-  Montserrat_700Bold
-} from '@expo-google-fonts/montserrat';
-
-import {
-  UseFontes,
-  lato_400Regular,
-  lato_700Bold,
-} from '@expo-google-fonts/lato';
+  Montserrat_700Bold,
+ } from '@expo-google-fonts/montserrat'
 
 export default function App() {
-const [fontCarregada] = useFontes({
-  "MontserratRegular": Montserrat_400Regular,
-  "MontserratBold": Montserrat_700Bold
-});
+  const [fonteCarregada] = useFonts({
+    "MontserratRegular": Montserrat_400Regular,
+    "MontserratBold": Montserrat_700Bold
+  });
 
-const [fontCarregada2] = useFontes({
-  "LatoRegular": Lato_400Regular,
-  "LatoBold": Lato_700Bold,
-});
-
-
-
-if(!fontCarregada){
-  return<View />
-}
-
-  return (
-    <SafeAreaView>
-      <Cesta />
+  if (!fonteCarregada) {
+    return <h1> Não carregou</h1>
       
+  }
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <Cesta />
     </SafeAreaView>
-  )
+  );
 }
 
